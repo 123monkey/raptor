@@ -46,9 +46,9 @@ public class RaptorServiceAutoConfiguration extends WebMvcConfigurerAdapter {
         }
     }
 
-    @Override
-    public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
-        exceptionResolvers.add(new RaptorHandlerExceptionResolver(raptorMessageConverter));
+    @Bean
+    public RaptorHandlerExceptionResolver raptorHandlerExceptionResolver(){
+        return new RaptorHandlerExceptionResolver(raptorMessageConverter);
     }
 
     @Configuration
