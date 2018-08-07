@@ -20,8 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 import java.util.List;
 
-@Import({RaptorHandlerMappingPostProcessor.class,
-        RaptorHandlerAdapterPostProcessor.class,
+@Import({RaptorHandlerAdapterPostProcessor.class,
         RaptorHandlerMethodProcessor.class})
 @Configuration
 public class RaptorServiceAutoConfiguration extends WebMvcConfigurerAdapter {
@@ -47,9 +46,9 @@ public class RaptorServiceAutoConfiguration extends WebMvcConfigurerAdapter {
         }
     }
 
-    @Override
-    public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
-        exceptionResolvers.add(new RaptorHandlerExceptionResolver(raptorMessageConverter));
+    @Bean
+    public RaptorHandlerExceptionResolver raptorHandlerExceptionResolver(){
+        return new RaptorHandlerExceptionResolver(raptorMessageConverter);
     }
 
     @Configuration

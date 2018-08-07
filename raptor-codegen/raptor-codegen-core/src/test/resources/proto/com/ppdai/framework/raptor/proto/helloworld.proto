@@ -15,11 +15,15 @@ service Simple {
     //rpc begin doc1
     //rpc begin  doc2
     rpc sayHello (GooodByeRequst) returns (Cat) {
+        option (method) = "post";
+        option (path) = "/test";
     }
 
     //rpc begin doc1
     //rpc begin  doc2
     rpc sayHello2 (GooodByeRequst) returns (Cat) {
+        option (method) = "get";
+        option (path) = "/test";
     }
 
 }

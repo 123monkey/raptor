@@ -26,6 +26,6 @@ public class RaptorSwaggerConverterTest extends AbstractCodegenTest{
 //        }
 
 
-        Json.prettyPrint(convert.get(0));
+        Json.prettyPrint(convert.get(0).getPaths().get("/test"));
     }
 }

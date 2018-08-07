@@ -80,7 +80,13 @@ public class RaptorSwaggerConverter extends SwaggerConverter {
             path = StringUtils.isBlank(path) && StringUtils.isBlank(servicePath) ? defaultName : PathUtils.collectPath(servicePath, path);
 
             // TODO: 2018/5/23 处理path 相同,方法不同的问题,
-            paths.addPathItem(path, getPathItem(rpc));
+            PathItem pathItem = paths.get(path);
+            if(Objects.isNull(pathItem)){
+                paths.addPathItem(path, getPathItem(rpc));
+            }else{
+                addOperation(rpc,pathItem);
+            }
+
         }
         return paths;
     }
@@ -94,45 +100,46 @@ public class RaptorSwaggerConverter extends SwaggerConverter {
     @Override
     protected PathItem getPathItem(Rpc rpc) {
         PathItem pathItem = new PathItem();
-        // 原版raptor 只支持post
+        addOperation(rpc, pathItem);
+        return pathItem;
+    }
 
+    private void addOperation(Rpc rpc, PathItem pathItem) {
         MethodMetaInfo methodMetaInfo = MethodMetaInfo.readFrom(rpc);
         Method method = methodMetaInfo.getMethod();
 
         if (Objects.isNull(method)) {
             method = Method.POST;
         }
+        Operation operation = getOperation(rpc);
         switch (method) {
             case GET:
-                pathItem.get(getOperation(rpc));
+                pathItem.get(operation);
                 break;
             case HEAD:
-                pathItem.head(getOperation(rpc));
+                pathItem.head(operation);
                 break;
             case POST:
-                pathItem.post(getOperation(rpc));
+                pathItem.post(operation);
                 break;
             case PUT:
-                pathItem.put(getOperation(rpc));
+                pathItem.put(operation);
                 break;
             case PATCH:
-                pathItem.patch(getOperation(rpc));
+                pathItem.patch(operation);
                 break;
             case DELETE:
-                pathItem.delete(getOperation(rpc));
+                pathItem.delete(operation);
                 break;
             case OPTIONS:
-                pathItem.options(getOperation(rpc));
+                pathItem.options(operation);
                 break;
             case TRACE:
-                pathItem.trace(getOperation(rpc));
+                pathItem.trace(operation);
                 break;
             default:
                 break;
         }
-
-        return pathItem;
-
     }
 
     /**

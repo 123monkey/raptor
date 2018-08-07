@@ -82,7 +82,7 @@ public class RefHelper {
     }
 
     private Map<String, Schema> buildProperties(MessageType protoType) {
-        Map<String, Schema> properties = new HashMap<>();
+        Map<String, Schema> properties = new LinkedHashMap<>();
         // 不处理oneof
         ImmutableList<Field> fields = protoType.fields();
         for (Field field : fields) {
