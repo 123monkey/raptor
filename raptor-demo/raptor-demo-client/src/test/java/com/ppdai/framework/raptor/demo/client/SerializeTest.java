@@ -5,6 +5,7 @@ import com.ppdai.framework.raptor.proto.HelloRequest;
 import com.ppdai.framework.raptor.spring.converter.RaptorJacksonMessageConverter;
 import com.ppdai.framework.raptor.spring.utils.RaptorMessageUtils;
 import feign.RequestTemplate;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.net.URLDecoder;
@@ -28,6 +29,8 @@ public class SerializeTest {
         map.forEach(requestTemplate::query);
 
         System.out.println(URLDecoder.decode(requestTemplate.queryLine(),"UTF-8"));
+
+        Assert.assertFalse(json.contains("tdouble"));
 
     }
 
