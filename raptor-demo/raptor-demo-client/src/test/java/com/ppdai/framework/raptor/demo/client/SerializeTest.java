@@ -1,5 +1,6 @@
 package com.ppdai.framework.raptor.demo.client;
 
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ppdai.framework.raptor.proto.HelloRequest;
 import com.ppdai.framework.raptor.spring.converter.RaptorJacksonMessageConverter;
@@ -20,6 +21,7 @@ public class SerializeTest {
     public void test() throws Exception {
         HelloRequest request = DemoMessageBuilder.getTestRequest();
         ObjectMapper objectMapper = new RaptorJacksonMessageConverter().getObjectMapper();
+        objectMapper.configure(MapperFeature.AUTO_DETECT_GETTERS,false);
         String json = objectMapper.writeValueAsString(request);
 
         System.out.println(json);
