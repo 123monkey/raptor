@@ -24,6 +24,7 @@
         <mockito.version>1.10.19</mockito.version>
         <junit.version>4.12</junit.version>
         <javax.ws.rs.version>2.1</javax.ws.rs.version>
+        <jackson.annotations.version>2.8.0</jackson.annotations.version>
     </properties>
 
     <modules>
@@ -35,6 +36,12 @@
     </modules>
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.annotations.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.squareup.wire</groupId>
