@@ -6,7 +6,7 @@
     <parent>
         <artifactId>raptor-benchmark</artifactId>
         <groupId>com.ppdai.framework</groupId>
-        <version>0.2.0-RC7</version>
+        <version>0.2.0-RC8</version>
     </parent>
     <artifactId>raptor-benchmark-api</artifactId>
 
