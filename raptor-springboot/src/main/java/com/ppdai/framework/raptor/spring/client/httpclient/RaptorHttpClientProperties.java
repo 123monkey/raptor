@@ -21,6 +21,7 @@ public class RaptorHttpClientProperties {
     public static final int DEFAULT_CONNECTION_TIMER_REPEAT = 10000;
     public static final int DEFAULT_RETRY_COUNT = 0;
     public static final boolean DEFAULT_RETRY_ENABLE = false;
+    private static final boolean DEFAULT_KEEP_ALIVE = true;
 
 
     private boolean disableSslValidation = DEFAULT_DISABLE_SSL_VALIDATION;
@@ -34,4 +35,5 @@ public class RaptorHttpClientProperties {
     private int connectionTimerRepeat = DEFAULT_CONNECTION_TIMER_REPEAT;
     private int retryCount = DEFAULT_RETRY_COUNT;
     private boolean requestSentRetryEnabled = DEFAULT_RETRY_ENABLE;
+    private boolean keepAlive = DEFAULT_KEEP_ALIVE;
 }

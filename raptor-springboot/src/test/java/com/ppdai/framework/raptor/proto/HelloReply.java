@@ -2,6 +2,7 @@
 // Source file: com/ppdai/framework/raptor/proto/helloworld.proto
 package com.ppdai.framework.raptor.proto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ppdai.framework.raptor.annotation.RaptorField;
 import com.ppdai.framework.raptor.annotation.RaptorMessage;
 
@@ -20,6 +21,7 @@ public final class HelloReply {
       order = 1,
       name = "message"
   )
+  @JsonProperty("message")
   private String message;
 
   @RaptorField(
@@ -27,6 +29,7 @@ public final class HelloReply {
       order = 2,
       name = "code"
   )
+  @JsonProperty("code")
   private Integer code;
 
   @RaptorField(
@@ -34,6 +37,7 @@ public final class HelloReply {
       order = 3,
       name = "request"
   )
+  @JsonProperty("request")
   private HelloRequest request;
 
   @RaptorField(
@@ -43,6 +47,7 @@ public final class HelloReply {
       name = "result",
       isMap = true
   )
+  @JsonProperty("result")
   private Map<String, String> result;
 
   public HelloReply() {

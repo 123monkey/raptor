@@ -1,5 +1,6 @@
 package com.ppdai.framework.raptor.exception;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ppdai.framework.raptor.annotation.RaptorField;
 
 import java.util.Map;
@@ -14,6 +15,7 @@ public class ErrorMessage {
             order = 1,
             name = "code"
     )
+    @JsonProperty("code")
     private int code;
 
     @RaptorField(
@@ -21,6 +23,7 @@ public class ErrorMessage {
             order = 2,
             name = "message"
     )
+    @JsonProperty("message")
     private String message;
 
     @RaptorField(
@@ -29,6 +32,7 @@ public class ErrorMessage {
             order = 3,
             name = "attachments"
     )
+    @JsonProperty("attachments")
     private Map<String, String> attachments;
 
     public int getCode() {

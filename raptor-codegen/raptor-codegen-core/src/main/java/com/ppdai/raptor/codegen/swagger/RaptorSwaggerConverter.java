@@ -42,10 +42,14 @@ public class RaptorSwaggerConverter extends SwaggerConverter {
         ProtoFileMetaInfo protoFileMetaInfo = ProtoFileMetaInfo.readFrom(protoFile);
         InterfaceMetaInfo interfaceMetaInfo = InterfaceMetaInfo.readFrom(protoFile, service);
 
+        String version = protoFileMetaInfo.getVersion();
+        if(StringUtils.isBlank(version)) {
+            version = "0.0.1";
+        }
 
         //required
         info.title(service.name());
-        info.version(protoFileMetaInfo.getVersion());
+        info.version(version);
 
         //optional
         // TODO: 2018/5/23 将 protoFileMetaInfo 和 interfaceMetaInfo 整合到description中

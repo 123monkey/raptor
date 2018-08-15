@@ -2,6 +2,7 @@
 // Source file: com/ppdai/framework/raptor/proto/helloworld.proto
 package com.ppdai.framework.raptor.proto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ppdai.framework.raptor.annotation.RaptorField;
 import com.ppdai.framework.raptor.annotation.RaptorMessage;
 
@@ -22,6 +23,7 @@ public final class HelloRequest {
       order = 1,
       name = "name"
   )
+  @JsonProperty("name")
   private String name;
 
   @RaptorField(
@@ -29,6 +31,7 @@ public final class HelloRequest {
       order = 2,
       name = "corpus"
   )
+  @JsonProperty("corpus")
   private Corpus corpus;
 
   @RaptorField(
@@ -37,6 +40,7 @@ public final class HelloRequest {
       name = "snippets",
       repeated = true
   )
+  @JsonProperty("snippets")
   private List<String> snippets;
 
   @RaptorField(
@@ -45,6 +49,7 @@ public final class HelloRequest {
       name = "cats",
       repeated = true
   )
+  @JsonProperty("cats")
   private List<Cat> cats;
 
   @RaptorField(
@@ -52,6 +57,7 @@ public final class HelloRequest {
       order = 5,
       name = "result"
   )
+  @JsonProperty("result")
   private Result result;
 
   @RaptorField(
@@ -59,6 +65,7 @@ public final class HelloRequest {
       order = 6,
       name = "tDouble"
   )
+  @JsonProperty("tDouble")
   private Double tDouble;
 
   @RaptorField(
@@ -66,6 +73,7 @@ public final class HelloRequest {
       order = 7,
       name = "tFloat"
   )
+  @JsonProperty("tFloat")
   private Float tFloat;
 
   @RaptorField(
@@ -73,6 +81,7 @@ public final class HelloRequest {
       order = 8,
       name = "tint32"
   )
+  @JsonProperty("tint32")
   private Integer tint32;
 
   @RaptorField(
@@ -80,6 +89,7 @@ public final class HelloRequest {
       order = 9,
       name = "tint64"
   )
+  @JsonProperty("tint64")
   private Long tint64;
 
   @RaptorField(
@@ -87,6 +97,7 @@ public final class HelloRequest {
       order = 10,
       name = "tunit32"
   )
+  @JsonProperty("tunit32")
   private Integer tunit32;
 
   @RaptorField(
@@ -94,6 +105,7 @@ public final class HelloRequest {
       order = 11,
       name = "tunit64"
   )
+  @JsonProperty("tunit64")
   private Long tunit64;
 
   @RaptorField(
@@ -101,6 +113,7 @@ public final class HelloRequest {
       order = 12,
       name = "tsint32"
   )
+  @JsonProperty("tsint32")
   private Integer tsint32;
 
   @RaptorField(
@@ -108,6 +121,7 @@ public final class HelloRequest {
       order = 13,
       name = "tsint64"
   )
+  @JsonProperty("tsint64")
   private Long tsint64;
 
   @RaptorField(
@@ -115,6 +129,7 @@ public final class HelloRequest {
       order = 14,
       name = "tfixed32"
   )
+  @JsonProperty("tfixed32")
   private Integer tfixed32;
 
   @RaptorField(
@@ -122,6 +137,7 @@ public final class HelloRequest {
       order = 15,
       name = "tfixed64"
   )
+  @JsonProperty("tfixed64")
   private Long tfixed64;
 
   @RaptorField(
@@ -129,6 +145,7 @@ public final class HelloRequest {
       order = 16,
       name = "tsfixed32"
   )
+  @JsonProperty("tsfixed32")
   private Integer tsfixed32;
 
   @RaptorField(
@@ -136,6 +153,7 @@ public final class HelloRequest {
       order = 17,
       name = "tsfixed64"
   )
+  @JsonProperty("tsfixed64")
   private Long tsfixed64;
 
   @RaptorField(
@@ -143,6 +161,7 @@ public final class HelloRequest {
       order = 18,
       name = "tbytes"
   )
+  @JsonProperty("tbytes")
   private byte[] tbytes;
 
   @RaptorField(
@@ -150,7 +169,16 @@ public final class HelloRequest {
       order = 19,
       name = "tbool"
   )
+  @JsonProperty("tbool")
   private Boolean tbool;
+
+  @RaptorField(
+      fieldType = "message",
+      order = 20,
+      name = "otherResult"
+  )
+  @JsonProperty("otherResult")
+  private OtherResult otherResult;
 
   @RaptorField(
       fieldType = "int32",
@@ -158,6 +186,7 @@ public final class HelloRequest {
       name = "rep_int32",
       repeated = true
   )
+  @JsonProperty("rep_int32")
   private List<Integer> repInt32;
 
   @RaptorField(
@@ -166,6 +195,7 @@ public final class HelloRequest {
       name = "rep_uint32",
       repeated = true
   )
+  @JsonProperty("rep_uint32")
   private List<Integer> repUint32;
 
   @RaptorField(
@@ -174,6 +204,7 @@ public final class HelloRequest {
       name = "rep_sint32",
       repeated = true
   )
+  @JsonProperty("rep_sint32")
   private List<Integer> repSint32;
 
   @RaptorField(
@@ -182,6 +213,7 @@ public final class HelloRequest {
       name = "rep_fixed32",
       repeated = true
   )
+  @JsonProperty("rep_fixed32")
   private List<Integer> repFixed32;
 
   @RaptorField(
@@ -190,6 +222,7 @@ public final class HelloRequest {
       name = "rep_sfixed32",
       repeated = true
   )
+  @JsonProperty("rep_sfixed32")
   private List<Integer> repSfixed32;
 
   @RaptorField(
@@ -198,6 +231,7 @@ public final class HelloRequest {
       name = "rep_int64",
       repeated = true
   )
+  @JsonProperty("rep_int64")
   private List<Long> repInt64;
 
   @RaptorField(
@@ -206,6 +240,7 @@ public final class HelloRequest {
       name = "rep_uint64",
       repeated = true
   )
+  @JsonProperty("rep_uint64")
   private List<Long> repUint64;
 
   @RaptorField(
@@ -214,6 +249,7 @@ public final class HelloRequest {
       name = "rep_sint64",
       repeated = true
   )
+  @JsonProperty("rep_sint64")
   private List<Long> repSint64;
 
   @RaptorField(
@@ -222,6 +258,7 @@ public final class HelloRequest {
       name = "rep_fixed64",
       repeated = true
   )
+  @JsonProperty("rep_fixed64")
   private List<Long> repFixed64;
 
   @RaptorField(
@@ -230,6 +267,7 @@ public final class HelloRequest {
       name = "rep_sfixed64",
       repeated = true
   )
+  @JsonProperty("rep_sfixed64")
   private List<Long> repSfixed64;
 
   @RaptorField(
@@ -238,6 +276,7 @@ public final class HelloRequest {
       name = "rep_bool",
       repeated = true
   )
+  @JsonProperty("rep_bool")
   private List<Boolean> repBool;
 
   @RaptorField(
@@ -246,6 +285,7 @@ public final class HelloRequest {
       name = "rep_float",
       repeated = true
   )
+  @JsonProperty("rep_float")
   private List<Float> repFloat;
 
   @RaptorField(
@@ -254,6 +294,7 @@ public final class HelloRequest {
       name = "rep_double",
       repeated = true
   )
+  @JsonProperty("rep_double")
   private List<Double> repDouble;
 
   @RaptorField(
@@ -262,6 +303,7 @@ public final class HelloRequest {
       name = "rep_string",
       repeated = true
   )
+  @JsonProperty("rep_string")
   private List<String> repString;
 
   @RaptorField(
@@ -270,6 +312,7 @@ public final class HelloRequest {
       name = "rep_bytes",
       repeated = true
   )
+  @JsonProperty("rep_bytes")
   private List<byte[]> repBytes;
 
   @RaptorField(
@@ -278,6 +321,7 @@ public final class HelloRequest {
       name = "rep_Result",
       repeated = true
   )
+  @JsonProperty("rep_Result")
   private List<Result> repResult;
 
   @RaptorField(
@@ -287,6 +331,7 @@ public final class HelloRequest {
       name = "map_int32_int32",
       isMap = true
   )
+  @JsonProperty("map_int32_int32")
   private Map<Integer, Integer> mapInt32Int32;
 
   @RaptorField(
@@ -296,6 +341,7 @@ public final class HelloRequest {
       name = "map_string_string",
       isMap = true
   )
+  @JsonProperty("map_string_string")
   private Map<String, String> mapStringString;
 
   @RaptorField(
@@ -305,6 +351,7 @@ public final class HelloRequest {
       name = "map_string_message",
       isMap = true
   )
+  @JsonProperty("map_string_message")
   private Map<String, Result> mapStringMessage;
 
   @RaptorField(
@@ -314,7 +361,18 @@ public final class HelloRequest {
       name = "map_string_enum",
       isMap = true
   )
+  @JsonProperty("map_string_enum")
   private Map<String, Corpus> mapStringEnum;
+
+  @RaptorField(
+      fieldType = "com.ppdai.framework.raptor.proto.Dog",
+      keyType = "string",
+      order = 505,
+      name = "dogMap",
+      isMap = true
+  )
+  @JsonProperty("dogMap")
+  private Map<String, Dog> dogMap;
 
   public HelloRequest() {
   }
@@ -322,13 +380,14 @@ public final class HelloRequest {
   public HelloRequest(String name, Corpus corpus, List<String> snippets, List<Cat> cats,
       Result result, Double tDouble, Float tFloat, Integer tint32, Long tint64, Integer tunit32,
       Long tunit64, Integer tsint32, Long tsint64, Integer tfixed32, Long tfixed64,
-      Integer tsfixed32, Long tsfixed64, byte[] tbytes, Boolean tbool, List<Integer> repInt32,
-      List<Integer> repUint32, List<Integer> repSint32, List<Integer> repFixed32,
-      List<Integer> repSfixed32, List<Long> repInt64, List<Long> repUint64, List<Long> repSint64,
-      List<Long> repFixed64, List<Long> repSfixed64, List<Boolean> repBool, List<Float> repFloat,
-      List<Double> repDouble, List<String> repString, List<byte[]> repBytes, List<Result> repResult,
-      Map<Integer, Integer> mapInt32Int32, Map<String, String> mapStringString,
-      Map<String, Result> mapStringMessage, Map<String, Corpus> mapStringEnum) {
+      Integer tsfixed32, Long tsfixed64, byte[] tbytes, Boolean tbool, OtherResult otherResult,
+      List<Integer> repInt32, List<Integer> repUint32, List<Integer> repSint32,
+      List<Integer> repFixed32, List<Integer> repSfixed32, List<Long> repInt64,
+      List<Long> repUint64, List<Long> repSint64, List<Long> repFixed64, List<Long> repSfixed64,
+      List<Boolean> repBool, List<Float> repFloat, List<Double> repDouble, List<String> repString,
+      List<byte[]> repBytes, List<Result> repResult, Map<Integer, Integer> mapInt32Int32,
+      Map<String, String> mapStringString, Map<String, Result> mapStringMessage,
+      Map<String, Corpus> mapStringEnum, Map<String, Dog> dogMap) {
     this.name = name;
     this.corpus = corpus;
     this.snippets = snippets;
@@ -348,6 +407,7 @@ public final class HelloRequest {
     this.tsfixed64 = tsfixed64;
     this.tbytes = tbytes;
     this.tbool = tbool;
+    this.otherResult = otherResult;
     this.repInt32 = repInt32;
     this.repUint32 = repUint32;
     this.repSint32 = repSint32;
@@ -368,6 +428,7 @@ public final class HelloRequest {
     this.mapStringString = mapStringString;
     this.mapStringMessage = mapStringMessage;
     this.mapStringEnum = mapStringEnum;
+    this.dogMap = dogMap;
   }
 
   public String getName() {
@@ -520,6 +581,14 @@ public final class HelloRequest {
 
   public void setTbool(Boolean tbool) {
     this.tbool=tbool;
+  }
+
+  public OtherResult getOtherResult() {
+    return this.otherResult;
+  }
+
+  public void setOtherResult(OtherResult otherResult) {
+    this.otherResult=otherResult;
   }
 
   public List<Integer> getRepInt32() {
@@ -682,6 +751,14 @@ public final class HelloRequest {
     this.mapStringEnum=mapStringEnum;
   }
 
+  public Map<String, Dog> getDogMap() {
+    return this.dogMap;
+  }
+
+  public void setDogMap(Map<String, Dog> dogMap) {
+    this.dogMap=dogMap;
+  }
+
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
@@ -707,6 +784,7 @@ public final class HelloRequest {
         && Objects.equals(tsfixed64, o.tsfixed64)
         && Arrays.equals(tbytes, o.tbytes)
         && Objects.equals(tbool, o.tbool)
+        && Objects.equals(otherResult, o.otherResult)
         && Objects.equals(repInt32, o.repInt32)
         && Objects.equals(repUint32, o.repUint32)
         && Objects.equals(repSint32, o.repSint32)
@@ -726,7 +804,8 @@ public final class HelloRequest {
         && Objects.equals(mapInt32Int32, o.mapInt32Int32)
         && Objects.equals(mapStringString, o.mapStringString)
         && Objects.equals(mapStringMessage, o.mapStringMessage)
-        && Objects.equals(mapStringEnum, o.mapStringEnum);
+        && Objects.equals(mapStringEnum, o.mapStringEnum)
+        && Objects.equals(dogMap, o.dogMap);
   }
 
   @Override
@@ -751,6 +830,7 @@ public final class HelloRequest {
     result_ = result_ * 37 + (tsfixed64 != null ? tsfixed64.hashCode() : 0);
     result_ = result_ * 37 +  Arrays.hashCode(tbytes);;
     result_ = result_ * 37 + (tbool != null ? tbool.hashCode() : 0);
+    result_ = result_ * 37 + (otherResult != null ? otherResult.hashCode() : 0);
     result_ = result_ * 37 + (repInt32 != null ? repInt32.hashCode() : 0);
     result_ = result_ * 37 + (repUint32 != null ? repUint32.hashCode() : 0);
     result_ = result_ * 37 + (repSint32 != null ? repSint32.hashCode() : 0);
@@ -771,6 +851,7 @@ public final class HelloRequest {
     result_ = result_ * 37 + (mapStringString != null ? mapStringString.hashCode() : 0);
     result_ = result_ * 37 + (mapStringMessage != null ? mapStringMessage.hashCode() : 0);
     result_ = result_ * 37 + (mapStringEnum != null ? mapStringEnum.hashCode() : 0);
+    result_ = result_ * 37 + (dogMap != null ? dogMap.hashCode() : 0);
     return result_;
   }
 
@@ -796,6 +877,7 @@ public final class HelloRequest {
     if (tsfixed64 != null) builder.append(", tsfixed64=").append(tsfixed64);
     if (tbytes != null) builder.append(", tbytes=").append(tbytes);
     if (tbool != null) builder.append(", tbool=").append(tbool);
+    if (otherResult != null) builder.append(", otherResult=").append(otherResult);
     if (repInt32 != null  && !repInt32.isEmpty()) builder.append(", rep_int32=").append(repInt32);
     if (repUint32 != null  && !repUint32.isEmpty()) builder.append(", rep_uint32=").append(repUint32);
     if (repSint32 != null  && !repSint32.isEmpty()) builder.append(", rep_sint32=").append(repSint32);
@@ -816,6 +898,7 @@ public final class HelloRequest {
     if (mapStringString != null  && !mapStringString.isEmpty()) builder.append(", map_string_string=").append(mapStringString);
     if (mapStringMessage != null  && !mapStringMessage.isEmpty()) builder.append(", map_string_message=").append(mapStringMessage);
     if (mapStringEnum != null  && !mapStringEnum.isEmpty()) builder.append(", map_string_enum=").append(mapStringEnum);
+    if (dogMap != null  && !dogMap.isEmpty()) builder.append(", dogMap=").append(dogMap);
     return builder.replace(0, 2, "HelloRequest{").append('}').toString();
   }
 
@@ -873,6 +956,7 @@ public final class HelloRequest {
         order = 1,
         name = "url"
     )
+    @JsonProperty("url")
     private String url;
 
     @RaptorField(
@@ -880,6 +964,7 @@ public final class HelloRequest {
         order = 2,
         name = "corpus"
     )
+    @JsonProperty("corpus")
     private Corpus corpus;
 
     public Result() {

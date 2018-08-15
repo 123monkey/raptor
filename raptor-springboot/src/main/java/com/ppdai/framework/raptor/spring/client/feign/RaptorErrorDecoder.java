@@ -6,6 +6,7 @@ import com.ppdai.framework.raptor.exception.RaptorException;
 import com.ppdai.framework.raptor.spring.converter.RaptorMessageConverter;
 import feign.Response;
 import feign.codec.ErrorDecoder;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StreamUtils;
 
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class RaptorErrorDecoder implements ErrorDecoder {
     @Override
     public Exception decode(String methodKey, Response response) {
         Collection<String> raptorErrorHeaders = response.headers().get(RaptorConstants.HEADER_ERROR);
-        String raptorError = raptorErrorHeaders.iterator().hasNext() ? raptorErrorHeaders.iterator().next() : null;
+        String raptorError = CollectionUtils.isEmpty(raptorErrorHeaders) ? null : raptorErrorHeaders.iterator().hasNext() ? raptorErrorHeaders.iterator().next() : null;
         if ("true".equals(raptorError)) {
             try {
                 ErrorMessage errorMessage = (ErrorMessage) raptorMessageConverter.read(ErrorMessage.class, new FeignResponseInputMessage(response));
