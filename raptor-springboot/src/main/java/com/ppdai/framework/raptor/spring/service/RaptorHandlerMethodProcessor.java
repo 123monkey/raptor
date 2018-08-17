@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConv
 
 import javax.servlet.ServletRequest;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,6 +30,10 @@ public class RaptorHandlerMethodProcessor extends AbstractMessageConverterMethod
 
     public RaptorHandlerMethodProcessor(RaptorMessageConverter converter) {
         super(Collections.singletonList(converter));
+    }
+
+    public RaptorHandlerMethodProcessor(RaptorMessageConverter converter, List<Object> advices) {
+        super(Collections.singletonList(converter),null,advices);
     }
 
     @Override
