@@ -20,8 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 import java.util.List;
 
-@Import({RaptorHandlerAdapterPostProcessor.class,
-        RaptorHandlerMethodProcessor.class})
+@Import(RaptorHandlerAdapterPostProcessor.class)
 @Configuration
 public class RaptorServiceAutoConfiguration extends WebMvcConfigurerAdapter {
 
