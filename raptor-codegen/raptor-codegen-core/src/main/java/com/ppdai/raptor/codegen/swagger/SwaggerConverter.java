@@ -348,7 +348,6 @@ public class SwaggerConverter {
         apiResponse.content(getContent(rpc.responseType()));
         Type type = this.schmea.getType(rpc.responseType());
         apiResponse.description(type.documentation());
-        apiResponse.link("ApiResponse link name", getLink());
         return apiResponse;
     }
 
