@@ -104,10 +104,8 @@ public class RefHelper {
         if (protoType.isScalar()) {
             return SchemaUtil.getSchema(protoType, this);
         } else if (protoType.isMap()) {
-            // TODO: 2018/5/21 deal with map
-            return new Schema().additionalProperties(getSchemaByType(protoType.valueType()));
+            return new Schema().additionalProperties(getSchemaByType(protoType.valueType())).type("object");
         } else {
-            // TODO: 2018/5/22 看看protobuf内部message 怎么处理
             return new Schema().$ref(getRefer(protoType));
         }
     }
